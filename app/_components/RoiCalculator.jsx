@@ -20,7 +20,7 @@ const usd = (n) => (n < 0 ? "−" : "") + "$" + Math.round(Math.abs(n)).toLocale
 const num = (n, d = 1) => (Math.round(n * 10 ** d) / 10 ** d).toLocaleString("en-US");
 
 const field =
-  "w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-slate-900 focus:border-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-600/30";
+  "min-h-11 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-base text-slate-900 focus:border-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-600/30";
 
 function Input({ id, label, hint, value, onChange, prefix, suffix, min = 0, max, step = 1 }) {
   return (
@@ -54,7 +54,7 @@ function PlanPicker({ name, plans, value, onChange }) {
         {plans.map((p) => (
           <label
             key={p.key}
-            className={`cursor-pointer rounded-lg border px-3 py-2 text-sm font-medium ${value === p.key ? "border-purple-700 bg-purple-50 text-purple-800" : "border-slate-300 bg-white text-slate-700"}`}
+            className={`inline-flex min-h-11 cursor-pointer items-center rounded-lg border px-4 text-sm font-medium has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-purple-600 ${value === p.key ? "border-purple-700 bg-purple-50 text-purple-800" : "border-slate-300 bg-white text-slate-700"}`}
           >
             <input type="radio" name={name} value={p.key} checked={value === p.key} onChange={() => onChange(p.key)} className="sr-only" />
             {p.label}
@@ -87,6 +87,26 @@ function Results({ rows, net, breakEven, cost }) {
       <p className="mt-4 border-t border-slate-700 pt-4 text-sm text-slate-300">
         Break-even: <span className="font-semibold text-white">{breakEven}</span>
       </p>
+      <div className="mt-6 border-t border-slate-700 pt-5">
+        <p className="text-lg font-semibold text-white">What am I waiting for?</p>
+        <a
+          href="/pricing#lead"
+          className="mt-3 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-purple-600 px-6 py-3 text-base font-semibold text-white hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >
+          Let's get started <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  );
+}
+
+// Phone only: keeps the answer in view while the visitor edits the inputs above the results.
+// Sits above the 40px ticker bar that's fixed to the bottom of the screen.
+function MobileSummary({ net }) {
+  return (
+    <div className="sticky bottom-12 z-30 flex items-center justify-between gap-3 rounded-xl bg-slate-900 px-4 py-3 text-white shadow-lg sm:col-span-2 lg:hidden" aria-hidden="true">
+      <span className="text-sm text-slate-300">Bottom line</span>
+      <span className={`text-lg font-bold tabular-nums ${net >= 0 ? "text-emerald-300" : "text-rose-300"}`}>{usd(net)}/mo</span>
     </div>
   );
 }
@@ -123,6 +143,7 @@ function ReceptionistScenario() {
         <div className="sm:col-span-2">
           <PlanPicker name="r-plan" plans={PLANS.receptionist} value={plan} onChange={setPlan} />
         </div>
+        <MobileSummary net={net} />
       </div>
       <Results
         cost={cost}
@@ -165,6 +186,7 @@ function VisibilityScenario() {
         <div className="sm:col-span-2">
           <PlanPicker name="v-plan" plans={PLANS.visibility} value={plan} onChange={setPlan} />
         </div>
+        <MobileSummary net={net} />
       </div>
       <Results
         cost={cost}
@@ -201,7 +223,7 @@ export default function RoiCalculator() {
             aria-selected={tab === t.key}
             aria-controls={`panel-${t.key}`}
             onClick={() => setTab(t.key)}
-            className={`rounded-lg px-4 py-2.5 text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 ${tab === t.key ? "bg-purple-700 text-white" : "bg-slate-100 text-slate-700 hover:bg-slate-200"}`}
+            className={`min-h-11 rounded-lg px-4 py-2.5 text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 ${tab === t.key ? "bg-purple-700 text-white" : "bg-slate-100 text-slate-700 hover:bg-slate-200"}`}
           >
             {t.label}
           </button>

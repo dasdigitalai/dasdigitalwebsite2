@@ -172,12 +172,12 @@ export default function Page() {
                   <figure key={x.text} className="flex flex-col rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
                     <p className="text-5xl font-bold tracking-tight text-purple-700">{x.value}</p>
                     <blockquote className="mt-3 flex-1 leading-relaxed text-slate-700">{x.text}</blockquote>
-                    <figcaption className="mt-5 border-t border-slate-100 pt-4 text-sm text-slate-500">
-                      Source:{" "}
-                      <a href={SOURCES[x.source].href} target="_blank" rel="noopener noreferrer" className="font-medium text-purple-700 hover:text-purple-800 hover:underline">
+                    <figcaption className="mt-5 flex flex-wrap items-center gap-x-1 border-t border-slate-100 pt-2 text-sm text-slate-500">
+                      <span>Source:</span>
+                      <a href={SOURCES[x.source].href} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center font-medium text-purple-700 hover:text-purple-800 hover:underline">
                         {SOURCES[x.source].short}
-                      </a>{" "}
-                      <a href={`#source-${footnote(x.source)}`} className="text-slate-400 hover:text-purple-700" aria-label={`Full citation ${footnote(x.source)}`}>
+                      </a>
+                      <a href={`#source-${footnote(x.source)}`} className="inline-flex min-h-11 min-w-11 items-center justify-center text-slate-500 hover:text-purple-700" aria-label={`Full citation ${footnote(x.source)}`}>
                         [{footnote(x.source)}]
                       </a>
                     </figcaption>
@@ -214,7 +214,7 @@ export default function Page() {
                   <span className="shrink-0 font-semibold text-slate-400">[{i + 1}]</span>
                   <span>
                     {SOURCES[k].name}.{" "}
-                    <a href={SOURCES[k].href} target="_blank" rel="noopener noreferrer" className="break-all font-medium text-purple-700 hover:underline">
+                    <a href={SOURCES[k].href} target="_blank" rel="noopener noreferrer" className="inline-block break-all py-3 font-medium text-purple-700 hover:underline">
                       {SOURCES[k].href.replace(/^https?:\/\//, "")}
                     </a>
                   </span>
