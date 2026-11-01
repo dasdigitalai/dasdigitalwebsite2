@@ -195,6 +195,11 @@ export default function Page() {
               </a>
             </div>
             <p className="mt-4 text-sm text-slate-500">{LOCATION.summary}</p>
+            <p className="mt-6 text-sm">
+              <a href="/ai-statistics#roi" className="font-semibold text-purple-700 hover:text-purple-800">
+                Not sure it pays for itself? Run your numbers in our ROI calculator <ArrowRight className="inline h-4 w-4" aria-hidden="true" />
+              </a>
+            </p>
           </div>
         </section>
 

@@ -3,6 +3,7 @@ import { CASE_STUDIES, CONTACT, INDUSTRY_PAGES, SERVICES, serviceHref } from "./
 
 const MORE = [
   { href: "/pricing", label: "Pricing" },
+  { href: "/ai-statistics", label: "AI statistics & ROI" },
   { href: "/about", label: "About" },
   { href: "/custom-saas-development", label: "Custom software" },
   { href: "/merchant-services-sales-tools", label: "Merchant services tools" },

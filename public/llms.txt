@@ -20,6 +20,10 @@
 - [Custom SaaS development](https://dasdigitalai.com/custom-saas-development): vertical software for small industries.
 - [Sales tools for merchant services teams](https://dasdigitalai.com/merchant-services-sales-tools)
 
+## Research
+
+- [AI for small business: statistics and ROI calculator](https://dasdigitalai.com/ai-statistics): sourced figures on small business AI adoption, time saved, missed calls, lead response time and online reviews (U.S. Chamber of Commerce, Goldman Sachs, U.S. Census Bureau, Thryv, Invoca, Harvard Business Review, BrightLocal), plus a calculator for the return on an AI receptionist or better search visibility.
+
 ## By trade
 
 - [Automation by trade](https://dasdigitalai.com/automation): HVAC companies, plumbers, electricians, roofers, landscapers, boutiques and hospitality businesses (restaurants, hotels, event venues).
