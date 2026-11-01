@@ -3,7 +3,7 @@ import { CASE_STUDIES, INDUSTRY_PAGES, SERVICES, SERVICE_PAGES, SITE_URL } from 
 // When each page's content last changed. Update the date when you change a page's text,
 // so search engines can trust lastmod (a date that changes on every deploy gets ignored).
 const UPDATED = {
-  "/": "2026-10-22",
+  "/": "2026-11-01",
   "/website-design": "2026-10-22",
   "/online-store": "2026-10-22",
   "/ai-receptionist": "2026-11-01",

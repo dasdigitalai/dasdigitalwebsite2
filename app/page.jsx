@@ -148,10 +148,10 @@ export default function Page() {
             <div>
               <p className="text-sm font-semibold text-purple-700">Smarter Technology. Simpler Business.</p>
               <h1 className="mt-4 text-balance text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-                Websites, AI receptionists and automation for South Florida businesses
+                Bringing affordable AI automation to South Florida businesses
               </h1>
               <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-slate-600">
-                Digital consulting services for small businesses. We set up the technology that helps your business run smoother, and explain it in plain English.
+                AI receptionists, websites and automation that save small businesses time and money. We set it all up for you and explain it in plain English.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a href="#lead" className={btnPrimary}>
