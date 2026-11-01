@@ -58,7 +58,13 @@ const CASE_STUDIES = [
     title: "Field Service Platform",
     desc: "Dispatch, invoicing, service plans and equipment tracking for HVAC, plumbing, lawn, pool and pest crews.",
     href: "/work/field-service-platform",
-    image: null,
+    image: {
+      src: "/work/field-service-dashboard.jpg",
+      width: 1346,
+      height: 587,
+      position: "left top",
+      alt: "Field service platform dashboard for an HVAC company: today's jobs, revenue, collections, overdue invoices, today's board of service calls and crew workloads",
+    },
   },
 ];
 
@@ -178,6 +184,7 @@ export default function WorkPage() {
                       height={c.image.height}
                       alt={c.image.alt}
                       sizes="(min-width: 1024px) 50vw, 100vw"
+                      style={{ objectPosition: c.image.position || "center" }}
                       className="aspect-[16/9] h-auto w-full object-cover"
                     />
                   ) : (
