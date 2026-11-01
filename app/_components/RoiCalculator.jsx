@@ -89,6 +89,7 @@ function Results({ rows, net, breakEven, cost }) {
       </p>
       <div className="mt-6 border-t border-slate-700 pt-5">
         <p className="text-lg font-semibold text-white">What am I waiting for?</p>
+        <p className="mt-1 text-sm text-slate-300">Every call you miss is a customer your competitor gets.</p>
         <a
           href="/pricing#lead"
           className="mt-3 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-purple-600 px-6 py-3 text-base font-semibold text-white hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"

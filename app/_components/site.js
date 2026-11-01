@@ -43,13 +43,13 @@ export const breadcrumbs = (items) => ({
   })),
 });
 
-// The four core services, in menu order. `ready: false` means the page isn't built yet,
+// The four core services, in menu order. `short` is the label in the desktop header menu, where space is tight. `ready: false` means the page isn't built yet,
 // so links go to the services section of the home page instead of a 404.
 export const SERVICES = [
   { key: "website", label: "Website Design", href: "/website-design", ready: true },
   { key: "ai-receptionist", label: "AI Receptionists", href: "/ai-receptionist", ready: true },
-  { key: "automation", label: "Business Automation", href: "/ai-automation-small-business", ready: true },
-  { key: "consulting", label: "Technology Consulting", href: "/technology-consulting", ready: true },
+  { key: "automation", label: "Business Automation", short: "Automation", href: "/ai-automation-small-business", ready: true },
+  { key: "consulting", label: "Technology Consulting", short: "Consulting", href: "/technology-consulting", ready: true },
 ];
 
 export const serviceHref = (s) => (s.ready ? s.href : "/#services");
