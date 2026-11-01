@@ -28,6 +28,13 @@ export const RESULTS = [];
 // Product screenshots for the gallery.
 export const SCREENSHOTS = [
   {
+    src: "/work/farritech/app-login.jpg",
+    width: 1893,
+    height: 906,
+    alt: "FarriTech app sign-in page with the headline Run Your Hoof Care Business Like a Pro, a login form, Google sign-in and a Client Login button",
+    caption: "app.farritech.com: farriers sign in here, and their clients have their own login to view and pay invoices",
+  },
+  {
     src: "/work/farritech-landing-page.jpg",
     width: 1337,
     height: 633,
