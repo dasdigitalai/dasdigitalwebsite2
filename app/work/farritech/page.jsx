@@ -230,7 +230,7 @@ export default function FarriTechCaseStudy() {
               src="/work/farritech/farrier-rig.svg"
               width={1600}
               height={640}
-              alt="Illustration of a professional farrier rig: a purple pickup with an aluminum farrier body, an open compartment of hammers, rasps and horseshoes, a gas forge and swing-out anvil, and a Scan to book an appointment FarriTech QR decal"
+              alt="Illustration of a professional farrier rig: a silver pickup with a diamond-plate aluminum farrier body, the FarriTech logo on the side panel, a Scan to book an appointment QR decal and a swing-out anvil"
               className="block h-auto w-full"
             />
           </div>
