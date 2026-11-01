@@ -222,6 +222,20 @@ export default function FarriTechCaseStudy() {
           </div>
         </section>
 
+        {/* Rig illustration (original artwork: public/work/farritech/farrier-rig.svg) */}
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="overflow-hidden rounded-3xl border-2 border-purple-500 shadow-[0_0_0_1px_rgba(168,85,247,0.25),0_20px_40px_-25px_rgba(168,85,247,0.45)]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/work/farritech/farrier-rig.svg"
+              width={1600}
+              height={640}
+              alt="Illustration of a professional farrier rig: a purple pickup with an aluminum farrier body, an open compartment of hammers, rasps and horseshoes, a gas forge and swing-out anvil, and a Scan to book an appointment FarriTech QR decal"
+              className="block h-auto w-full"
+            />
+          </div>
+        </div>
+
         <ResultsStrip results={RESULTS} />
 
         {/* The Problem */}

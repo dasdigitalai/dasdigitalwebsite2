@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 640" role="img" aria-labelledby="t d">
+  <title id="t">Illustration of a professional farrier rig</title>
+  <desc id="d">A purple pickup truck with an aluminum farrier body. One side compartment is open, showing hammers, rasps and a rack of horseshoes. A gas forge and a swing-out anvil are mounted at the back, and a decal on the side reads Scan to book an appointment, FarriTech, with a QR code.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b0d18"/>
+      <stop offset="1" stop-color="#171236"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.55" cy="0.62" r="0.55">
+      <stop offset="0" stop-color="#a855f7" stop-opacity="0.45"/>
+      <stop offset="0.6" stop-color="#7e22ce" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#7e22ce" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fire" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff7ed"/>
+      <stop offset="0.35" stop-color="#fdba74"/>
+      <stop offset="0.7" stop-color="#f97316" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="paint" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9333ea"/>
+      <stop offset="1" stop-color="#6b21a8"/>
+    </linearGradient>
+    <linearGradient id="alu" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e5e7ef"/>
+      <stop offset="0.5" stop-color="#c3c7d4"/>
+      <stop offset="1" stop-color="#9ca1b3"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#312e81"/>
+      <stop offset="1" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <pattern id="tread" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="#d6d9e3"/>
+      <path d="M2 6 L8 2 M12 16 L18 12" stroke="#a6abbb" stroke-width="2.5" stroke-linecap="round"/>
+    </pattern>
+  </defs>
+
+  <!-- sky and glow -->
+  <rect width="1600" height="640" fill="url(#sky)"/>
+  <rect width="1600" height="640" fill="url(#glow)"/>
+  <g fill="#ffffff" opacity="0.35">
+    <circle cx="140" cy="70" r="1.6"/><circle cx="330" cy="120" r="1.2"/><circle cx="520" cy="60" r="1.5"/>
+    <circle cx="880" cy="90" r="1.2"/><circle cx="1120" cy="50" r="1.6"/><circle cx="1360" cy="110" r="1.3"/>
+    <circle cx="1500" cy="70" r="1.1"/><circle cx="740" cy="150" r="1"/><circle cx="1260" cy="160" r="1"/>
+  </g>
+
+  <!-- barn and fence in the background -->
+  <g fill="#1c1838">
+    <path d="M60 520 V330 L170 250 L280 330 V520 Z"/>
+    <path d="M1380 520 V360 L1460 300 L1540 360 V520 Z"/>
+  </g>
+  <path d="M120 520 V430 H220 V520" fill="#141130"/>
+  <path d="M135 445 L205 505 M205 445 L135 505" stroke="#26214a" stroke-width="6"/>
+  <g stroke="#2a2550" stroke-width="7" stroke-linecap="round">
+    <path d="M0 470 H1600"/><path d="M0 498 H1600"/>
+    <path d="M40 450 V520"/><path d="M300 450 V520"/><path d="M1300 450 V520"/><path d="M1560 450 V520"/>
+  </g>
+
+  <!-- ground -->
+  <rect y="520" width="1600" height="120" fill="#0d1020"/>
+  <path d="M0 520 H1600" stroke="#3b2f6b" stroke-width="2"/>
+  <ellipse cx="770" cy="582" rx="560" ry="20" fill="#000" opacity="0.45"/>
+
+  <!-- chassis -->
+  <rect x="300" y="462" width="910" height="22" rx="6" fill="#0f1220"/>
+
+  <!-- cab -->
+  <path d="M300 472 L300 424 Q302 404 326 401 L468 393 L520 316 Q528 302 546 302 L650 302 L650 472 Z" fill="url(#paint)"/>
+  <path d="M488 390 L532 324 Q536 317 544 317 L634 317 L634 390 Z" fill="url(#glass)"/>
+  <path d="M540 330 L575 330 L520 388 L500 388 Z" fill="#ffffff" opacity="0.12"/>
+  <path d="M566 320 V466" stroke="#581c87" stroke-width="3"/>
+  <rect x="582" y="402" width="28" height="7" rx="3" fill="#e9d5ff" opacity="0.8"/>
+  <rect x="306" y="410" width="22" height="13" rx="4" fill="#f5d0fe"/>
+  <rect x="286" y="452" width="34" height="24" rx="6" fill="#c3c7d4"/>
+  <path d="M330 404 L462 397" stroke="#c084fc" stroke-width="3" opacity="0.6"/>
+  <rect x="628" y="350" width="10" height="26" rx="3" fill="#1e1b4b"/>
+
+  <!-- farrier body (aluminum) -->
+  <rect x="656" y="286" width="500" height="186" rx="10" fill="url(#alu)"/>
+  <rect x="656" y="452" width="500" height="20" fill="url(#tread)"/>
+  <path d="M656 296 H1156" stroke="#ffffff" stroke-width="3" opacity="0.7"/>
+  <!-- roof rack -->
+  <g stroke="#9ca1b3" stroke-width="6" stroke-linecap="round">
+    <path d="M676 286 V262 M1136 286 V262 M676 262 H1136"/>
+    <path d="M820 286 V262 M990 286 V262"/>
+  </g>
+
+  <!-- compartment 1: closed, with the FarriTech QR decal -->
+  <rect x="670" y="306" width="140" height="140" rx="6" fill="#d3d6e0" stroke="#9ca1b3" stroke-width="3"/>
+  <rect x="784" y="366" width="14" height="22" rx="3" fill="#7d8296"/>
+  <!-- "Scan to book an appointment" decal (mockup QR, not scannable) -->
+  <g transform="translate(676 312)">
+    <rect width="128" height="128" rx="10" fill="#ffffff"/>
+    <rect width="128" height="22" rx="10" fill="#6b21a8"/>
+    <rect y="12" width="128" height="10" fill="#6b21a8"/>
+    <text x="64" y="15.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.3">SCAN TO BOOK</text>
+    <g transform="translate(22 27)" fill="#1e0838"><rect x="0" y="0" width="28" height="28"/><rect x="4" y="4" width="20" height="20" fill="#ffffff"/><rect x="8" y="8" width="12" height="12"/><rect x="56" y="0" width="28" height="28"/><rect x="60" y="4" width="20" height="20" fill="#ffffff"/><rect x="64" y="8" width="12" height="12"/><rect x="0" y="56" width="28" height="28"/><rect x="4" y="60" width="20" height="20" fill="#ffffff"/><rect x="8" y="64" width="12" height="12"/><rect x="0" y="32" width="4" height="4"/><rect x="0" y="36" width="4" height="4"/><rect x="0" y="44" width="4" height="4"/><rect x="4" y="32" width="4" height="4"/><rect x="4" y="36" width="4" height="4"/><rect x="4" y="44" width="4" height="4"/><rect x="4" y="48" width="4" height="4"/><rect x="8" y="32" width="4" height="4"/><rect x="8" y="36" width="4" height="4"/><rect x="8" y="40" width="4" height="4"/><rect x="8" y="48" width="4" height="4"/><rect x="12" y="32" width="4" height="4"/><rect x="12" y="48" width="4" height="4"/><rect x="16" y="36" width="4" height="4"/><rect x="16" y="44" width="4" height="4"/><rect x="16" y="48" width="4" height="4"/><rect x="20" y="32" width="4" height="4"/><rect x="20" y="36" width="4" height="4"/><rect x="20" y="44" width="4" height="4"/><rect x="24" y="32" width="4" height="4"/><rect x="24" y="40" width="4" height="4"/><rect x="24" y="48" width="4" height="4"/><rect x="28" y="36" width="4" height="4"/><rect x="28" y="44" width="4" height="4"/><rect x="28" y="48" width="4" height="4"/><rect x="32" y="0" width="4" height="4"/><rect x="32" y="8" width="4" height="4"/><rect x="32" y="12" width="4" height="4"/><rect x="32" y="20" width="4" height="4"/><rect x="32" y="24" width="4" height="4"/><rect x="32" y="28" width="4" height="4"/><rect x="32" y="40" width="4" height="4"/><rect x="32" y="60" width="4" height="4"/><rect x="32" y="68" width="4" height="4"/><rect x="32" y="72" width="4" height="4"/><rect x="32" y="80" width="4" height="4"/><rect x="36" y="4" width="4" height="4"/><rect x="36" y="28" width="4" height="4"/><rect x="36" y="44" width="4" height="4"/><rect x="36" y="56" width="4" height="4"/><rect x="36" y="64" width="4" height="4"/><rect x="40" y="0" width="4" height="4"/><rect x="40" y="4" width="4" height="4"/><rect x="40" y="12" width="4" height="4"/><rect x="40" y="16" width="4" height="4"/><rect x="40" y="20" width="4" height="4"/><rect x="40" y="24" width="4" height="4"/><rect x="40" y="28" width="4" height="4"/><rect x="40" y="32" width="4" height="4"/><rect x="40" y="40" width="4" height="4"/><rect x="40" y="44" width="4" height="4"/><rect x="40" y="48" width="4" height="4"/><rect x="40" y="56" width="4" height="4"/><rect x="40" y="60" width="4" height="4"/><rect x="40" y="80" width="4" height="4"/><rect x="44" y="0" width="4" height="4"/><rect x="44" y="4" width="4" height="4"/><rect x="44" y="16" width="4" height="4"/><rect x="44" y="20" width="4" height="4"/><rect x="44" y="28" width="4" height="4"/><rect x="44" y="32" width="4" height="4"/><rect x="44" y="44" width="4" height="4"/><rect x="44" y="48" width="4" height="4"/><rect x="44" y="52" width="4" height="4"/><rect x="44" y="56" width="4" height="4"/><rect x="48" y="0" width="4" height="4"/><rect x="48" y="20" width="4" height="4"/><rect x="48" y="24" width="4" height="4"/><rect x="48" y="28" width="4" height="4"/><rect x="48" y="32" width="4" height="4"/><rect x="48" y="40" width="4" height="4"/><rect x="48" y="44" width="4" height="4"/><rect x="48" y="48" width="4" height="4"/><rect x="48" y="52" width="4" height="4"/><rect x="48" y="56" width="4" height="4"/><rect x="48" y="60" width="4" height="4"/><rect x="48" y="64" width="4" height="4"/><rect x="48" y="68" width="4" height="4"/><rect x="48" y="72" width="4" height="4"/><rect x="48" y="76" width="4" height="4"/><rect x="48" y="80" width="4" height="4"/><rect x="52" y="40" width="4" height="4"/><rect x="52" y="44" width="4" height="4"/><rect x="52" y="48" width="4" height="4"/><rect x="52" y="52" width="4" height="4"/><rect x="52" y="56" width="4" height="4"/><rect x="52" y="68" width="4" height="4"/><rect x="52" y="76" width="4" height="4"/><rect x="52" y="80" width="4" height="4"/><rect x="56" y="32" width="4" height="4"/><rect x="56" y="36" width="4" height="4"/><rect x="56" y="44" width="4" height="4"/><rect x="56" y="48" width="4" height="4"/><rect x="56" y="60" width="4" height="4"/><rect x="56" y="68" width="4" height="4"/><rect x="60" y="36" width="4" height="4"/><rect x="60" y="40" width="4" height="4"/><rect x="60" y="44" width="4" height="4"/><rect x="60" y="60" width="4" height="4"/><rect x="60" y="64" width="4" height="4"/><rect x="64" y="40" width="4" height="4"/><rect x="64" y="48" width="4" height="4"/><rect x="64" y="52" width="4" height="4"/><rect x="64" y="56" width="4" height="4"/><rect x="64" y="60" width="4" height="4"/><rect x="64" y="64" width="4" height="4"/><rect x="64" y="76" width="4" height="4"/><rect x="68" y="40" width="4" height="4"/><rect x="68" y="44" width="4" height="4"/><rect x="68" y="48" width="4" height="4"/><rect x="68" y="52" width="4" height="4"/><rect x="68" y="56" width="4" height="4"/><rect x="68" y="72" width="4" height="4"/><rect x="72" y="32" width="4" height="4"/><rect x="72" y="52" width="4" height="4"/><rect x="72" y="56" width="4" height="4"/><rect x="72" y="64" width="4" height="4"/><rect x="72" y="76" width="4" height="4"/><rect x="72" y="80" width="4" height="4"/><rect x="76" y="40" width="4" height="4"/><rect x="76" y="44" width="4" height="4"/><rect x="76" y="48" width="4" height="4"/><rect x="76" y="60" width="4" height="4"/><rect x="76" y="76" width="4" height="4"/><rect x="80" y="32" width="4" height="4"/><rect x="80" y="36" width="4" height="4"/><rect x="80" y="56" width="4" height="4"/><rect x="80" y="68" width="4" height="4"/><rect x="80" y="72" width="4" height="4"/><rect x="80" y="76" width="4" height="4"/><rect x="80" y="80" width="4" height="4"/></g>
+    <text x="64" y="120" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="700" fill="#3b0764">AN APPOINTMENT · <tspan fill="#c026d3">FarriTech</tspan></text>
+  </g>
+
+  <!-- compartment 2: open, tools inside -->
+  <path d="M822 300 L812 232 H992 L982 300 Z" fill="#e5e7ef" stroke="#9ca1b3" stroke-width="3"/>
+  <path d="M832 290 L824 244 H980 L974 290" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+  <rect x="822" y="306" width="160" height="140" rx="4" fill="#0b0b16"/>
+  <rect x="822" y="306" width="160" height="10" fill="#1f1b3a"/>
+  <!-- horseshoe rack -->
+  <path d="M832 330 H972" stroke="#4b5068" stroke-width="4"/>
+  <g fill="none" stroke="#c3c7d4" stroke-width="5" stroke-linecap="round">
+    <path d="M842 334 v14 a10 10 0 0 0 20 0 v-14"/>
+    <path d="M870 334 v14 a10 10 0 0 0 20 0 v-14"/>
+    <path d="M898 334 v14 a10 10 0 0 0 20 0 v-14"/>
+    <path d="M926 334 v14 a10 10 0 0 0 20 0 v-14"/>
+    <path d="M954 334 v14 a8 8 0 0 0 16 0 v-14"/>
+  </g>
+  <!-- hammers -->
+  <g>
+    <rect x="846" y="378" width="6" height="56" rx="2" fill="#a16207"/>
+    <rect x="836" y="372" width="26" height="12" rx="3" fill="#6b7280"/>
+    <rect x="874" y="382" width="6" height="52" rx="2" fill="#a16207"/>
+    <rect x="866" y="376" width="22" height="11" rx="3" fill="#6b7280"/>
+  </g>
+  <!-- rasps and nippers -->
+  <rect x="904" y="374" width="9" height="62" rx="2" fill="#9ca3af"/>
+  <rect x="904" y="374" width="9" height="62" rx="2" fill="none" stroke="#6b7280" stroke-dasharray="3 3"/>
+  <rect x="918" y="380" width="9" height="56" rx="2" fill="#9ca3af"/>
+  <path d="M944 378 L956 436 M966 378 L954 436" stroke="#cbd5e1" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="955" cy="408" r="4" fill="#475569"/>
+  <!-- warm light inside -->
+  <rect x="822" y="306" width="160" height="140" rx="4" fill="#c084fc" opacity="0.08"/>
+
+  <!-- compartment 3: closed -->
+  <rect x="994" y="306" width="148" height="140" rx="6" fill="#d3d6e0" stroke="#9ca1b3" stroke-width="3"/>
+  <rect x="1004" y="366" width="14" height="22" rx="3" fill="#7d8296"/>
+  <g fill="#9ca1b3"><rect x="1030" y="320" width="100" height="6" rx="3"/><rect x="1030" y="334" width="100" height="6" rx="3"/><rect x="1030" y="348" width="100" height="6" rx="3"/></g>
+  <text x="1068" y="420" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#6b21a8" letter-spacing="1">FARRIER</text>
+
+  <!-- rear: gas forge -->
+  <rect x="1160" y="330" width="22" height="120" fill="#4b5068"/>
+  <g transform="translate(1176 300)">
+    <rect width="96" height="62" rx="8" fill="#374151"/>
+    <rect x="6" y="6" width="84" height="50" rx="6" fill="#1f2937"/>
+    <ellipse cx="48" cy="32" rx="40" ry="26" fill="url(#fire)"/>
+    <rect x="30" y="20" width="36" height="24" rx="5" fill="#fff7ed" opacity="0.85"/>
+    <rect x="96" y="22" width="18" height="8" rx="3" fill="#6b7280"/>
+  </g>
+  <ellipse cx="1224" cy="330" rx="80" ry="50" fill="#f97316" opacity="0.12"/>
+
+  <!-- rear: swing-out anvil -->
+  <rect x="1156" y="430" width="140" height="12" rx="4" fill="#4b5068"/>
+  <rect x="1270" y="432" width="16" height="92" fill="#374151"/>
+  <rect x="1252" y="512" width="52" height="10" rx="3" fill="#1f2937"/>
+  <path d="M1210 392 H1330 Q1352 392 1362 400 Q1340 404 1320 410 V420 H1300 L1292 432 H1262 L1254 420 H1236 V410 Q1214 406 1210 398 Z" fill="#4b5563"/>
+  <path d="M1214 394 H1330" stroke="#9ca3af" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- wheel wells -->
+  <circle cx="430" cy="520" r="68" fill="#0b0d18"/>
+  <circle cx="1000" cy="520" r="68" fill="#0b0d18"/>
+  <path d="M379 472 A70 70 0 0 1 481 472" fill="none" stroke="#581c87" stroke-width="7" stroke-linecap="round"/>
+  <path d="M949 472 A70 70 0 0 1 1051 472" fill="none" stroke="#8b90a3" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- wheels -->
+  <g>
+    <circle cx="430" cy="520" r="62" fill="#0f1220"/>
+    <circle cx="430" cy="520" r="52" fill="#0a0a12"/>
+    <circle cx="430" cy="520" r="30" fill="#8b8fa3"/>
+    <circle cx="430" cy="520" r="11" fill="#d6d9e3"/>
+    <g stroke="#5b6075" stroke-width="5"><path d="M430 494 V546 M404 520 H456"/></g>
+    <circle cx="1000" cy="520" r="62" fill="#0f1220"/>
+    <circle cx="1000" cy="520" r="52" fill="#0a0a12"/>
+    <circle cx="1000" cy="520" r="30" fill="#8b8fa3"/>
+    <circle cx="1000" cy="520" r="11" fill="#d6d9e3"/>
+    <g stroke="#5b6075" stroke-width="5"><path d="M1000 494 V546 M974 520 H1026"/></g>
+  </g>
+</svg>
