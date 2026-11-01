@@ -15,6 +15,16 @@ export const metadata = {
   openGraph: { title: "Pricing | DAS Digital", description, url: path, type: "website" },
 };
 
+// Limited-time sale on Local SEO Setup. The sale prices show (with the regular price crossed out)
+// until SALE.ends, then the page falls back to regular prices on its own. `revalidate` below
+// re-renders the page hourly so the switch happens without a deploy.
+const SALE = {
+  label: "Save 20% through December 31, 2026",
+  ends: new Date("2027-01-01T05:00:00Z"), // midnight Eastern, Dec 31 → Jan 1
+  validUntil: "2026-12-31",
+};
+export const revalidate = 3600;
+
 // Every price on the site lives here. Keep it in sync with /ai-receptionist's FAQ, public/llms.txt
 // and the ticker bar when a price changes.
 const PLANS = [
@@ -86,6 +96,56 @@ const PLANS = [
     ],
   },
   {
+    id: "local-seo-setup",
+    name: "Local SEO Setup",
+    onSale: true,
+    blurb: "A one-time tune-up so Google and Maps show the right business to people searching nearby.",
+    tiers: [
+      {
+        name: "Basic",
+        price: "$299",
+        sale: "$239",
+        unit: "one-time",
+        features: [
+          "1 location",
+          "Google Business Profile optimized, with help getting verified",
+          "Website SEO audit with a list of fixes",
+          "10 local and \u201cnear me\u201d keywords researched",
+          "Page titles and descriptions on up to 5 pages",
+          "Name, address and phone checked across major directories",
+        ],
+      },
+      {
+        name: "Standard",
+        price: "$499",
+        sale: "$399",
+        unit: "one-time",
+        highlight: true,
+        features: [
+          "Everything in Basic, for up to 2 locations",
+          "25 keywords and up to 10 pages optimized",
+          "25 directory listings created or corrected",
+          "Google Maps optimization",
+          "Top 3 local competitors analyzed",
+        ],
+      },
+      {
+        name: "Premium",
+        price: "$799",
+        sale: "$639",
+        unit: "one-time",
+        features: [
+          "Everything in Standard, for up to 3 locations",
+          "50+ keywords and up to 20 pages optimized",
+          "30 directory listings",
+          "Technical SEO fixes: speed, mobile, broken links",
+          "30-day ranking report",
+        ],
+      },
+    ],
+    note: "Delivered in about 7 business days. Start Local Visibility within 30 days and there's no Local Visibility setup fee. We never guarantee rankings; we guarantee the work.",
+  },
+  {
     id: "owner-insights",
     name: "Owner Insights",
     blurb: "See what's selling and when, and stop retyping paperwork.",
@@ -130,6 +190,7 @@ const FAQS = [
   { q: "What if I go over my call minutes?", a: "Nothing stops working. Extra minutes are $0.35 each, and we'll tell you if a bigger plan would cost less." },
   { q: "Will review replies go out without me seeing them?", a: "Only if you want them to. By default you approve every reply. Many owners let 4- and 5-star replies go out on their own." },
   { q: "Which point-of-sale systems work with the Sales Dashboard?", a: "Most point-of-sale systems can export a daily sales report, and we build from that. Tell us which one you use and we'll confirm before you pay anything." },
+  { q: "Do you guarantee a spot on Google?", a: "No one honestly can. Google decides rankings. We guarantee the work: a complete, accurate profile, consistent listings and pages written for the searches your customers make, with a report showing everything we did." },
   { q: "What about websites and online stores?", a: "Online stores are a one-time $995 with our Online Store Starter Package. Websites and automation projects get a clear price after a short conversation, before any work starts." },
 ];
 
@@ -143,6 +204,7 @@ const amount = (price) => price.replace(/[^0-9.]/g, "");
 
 export default function Page() {
   const url = `${SITE_URL}${path}`;
+  const saleActive = Date.now() < SALE.ends.getTime();
   const jsonLd = [
     {
       "@context": "https://schema.org",
@@ -157,7 +219,8 @@ export default function Page() {
           seller: PROVIDER,
           priceSpecification: {
             "@type": t.unit === "/month" ? "UnitPriceSpecification" : "PriceSpecification",
-            ...(t.price.startsWith("From") ? { minPrice: amount(t.price) } : { price: amount(t.price) }),
+            ...(t.price.startsWith("From") ? { minPrice: amount(t.price) } : { price: amount(saleActive && t.sale ? t.sale : t.price) }),
+            ...(saleActive && t.sale ? { validThrough: SALE.validUntil } : {}),
             priceCurrency: "USD",
             ...(t.unit === "/month" ? { unitCode: "MON" } : {}),
           },
@@ -210,6 +273,9 @@ export default function Page() {
               <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                 <div className="max-w-2xl">
                   <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{plan.name}</h2>
+                  {plan.onSale && saleActive ? (
+                    <p className="mt-3 inline-flex rounded-full bg-amber-100 px-3 py-1 text-sm font-semibold text-amber-900">{SALE.label}</p>
+                  ) : null}
                   <p className="mt-3 text-lg text-slate-600">{plan.blurb}</p>
                 </div>
                 {plan.setup ? (
@@ -219,7 +285,7 @@ export default function Page() {
                 ) : null}
               </div>
 
-              <div className="mt-10 grid gap-6 md:grid-cols-2">
+              <div className={`mt-10 grid gap-6 md:grid-cols-2 ${plan.tiers.length === 3 ? "lg:grid-cols-3" : ""}`}>
                 {plan.tiers.map((t) => (
                   <div
                     key={t.name}
@@ -227,8 +293,19 @@ export default function Page() {
                   >
                     <h3 className="text-xl font-semibold">{t.name}</h3>
                     <p className="mt-4">
-                      <span className="text-4xl font-bold tracking-tight">{t.price}</span>
-                      {t.unit ? <span className="text-slate-600">{t.unit}</span> : null}
+                      {saleActive && t.sale ? (
+                        <>
+                          <span className="mr-2 text-2xl font-semibold text-slate-400 line-through decoration-2">
+                            <span className="sr-only">Regular price </span>{t.price}
+                          </span>
+                          <span className="text-4xl font-bold tracking-tight text-purple-700">
+                            <span className="sr-only">Sale price </span>{t.sale}
+                          </span>
+                        </>
+                      ) : (
+                        <span className="text-4xl font-bold tracking-tight">{t.price}</span>
+                      )}
+                      {t.unit ? <span className="text-slate-600">{t.unit.startsWith("/") ? t.unit : ` ${t.unit}`}</span> : null}
                     </p>
                     {t.extra ? <p className="mt-1 text-sm text-slate-600">{t.extra}</p> : null}
                     <ul className="mt-6 space-y-3">
