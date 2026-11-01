@@ -17,3 +17,44 @@ h1, h2, h3 { font-family: var(--font-brand), Arial, sans-serif; }
 @media (prefers-reduced-motion: reduce) {
   .ticker-track { animation: none; }
 }
+
+/* Home page hero (HeroSlides): each message flies into the center from a different side. */
+@keyframes hero-in-left { from { transform: translateX(-60vw); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes hero-in-right { from { transform: translateX(60vw); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes hero-in-top { from { transform: translateY(-14rem); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes hero-in-bottom { from { transform: translateY(14rem); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes hero-in-zoom { from { transform: scale(0.85); opacity: 0; } to { transform: none; opacity: 1; } }
+.hero-in-left { animation: hero-in-left 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hero-in-right { animation: hero-in-right 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hero-in-top { animation: hero-in-top 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hero-in-bottom { animation: hero-in-bottom 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hero-in-zoom { animation: hero-in-zoom 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-in-left, .hero-in-right, .hero-in-top, .hero-in-bottom, .hero-in-zoom { animation: none; }
+}
+
+/* Missed-call scene (MissedCallClock): a customer runs from "Your business" to "Competitor" every 3.2s. */
+@keyframes scene-run { 0% { left: 12%; opacity: 0; } 8% { opacity: 1; } 82% { left: 78%; opacity: 1; } 92%, 100% { left: 80%; opacity: 0; } }
+@keyframes scene-swing { 0%, 100% { transform: rotate(28deg); } 50% { transform: rotate(-28deg); } }
+@keyframes scene-ring { 0%, 40%, 100% { transform: rotate(0); } 5%, 15%, 25% { transform: rotate(-6deg); } 10%, 20%, 30% { transform: rotate(6deg); } }
+@keyframes scene-plus { 0%, 80% { opacity: 0; transform: translate(-50%, 6px); } 88% { opacity: 1; transform: translate(-50%, -4px); } 100% { opacity: 0; transform: translate(-50%, -12px); } }
+.scene-runner { left: 12%; animation: scene-run 3.2s linear infinite; }
+.scene-leg-a, .scene-arm-b { transform-box: fill-box; transform-origin: top center; animation: scene-swing 0.36s ease-in-out infinite; }
+.scene-leg-b, .scene-arm-a { transform-box: fill-box; transform-origin: top center; animation: scene-swing 0.36s ease-in-out infinite reverse; }
+.scene-ring { animation: scene-ring 1.6s ease-in-out infinite; }
+.scene-plus { opacity: 0; animation: scene-plus 3.2s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .scene-runner { left: 76%; opacity: 1; animation: none; }
+  .scene-leg-a, .scene-leg-b, .scene-arm-a, .scene-arm-b, .scene-ring { animation: none; }
+  .scene-plus { opacity: 1; transform: translate(-50%, 0); animation: none; }
+}
+/* "After" scene: customers bob at your door, the competitor scratches his head. */
+@keyframes scene-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes scene-scratch { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(-12deg); } }
+@keyframes scene-huh { 0%, 100% { opacity: 0.4; transform: translate(-50%, 0); } 50% { opacity: 1; transform: translate(-50%, -3px); } }
+.scene-bob { animation: scene-bob 1.2s ease-in-out infinite; }
+.scene-scratch { transform-box: fill-box; transform-origin: bottom left; animation: scene-scratch 0.5s ease-in-out infinite; }
+.scene-huh { animation: scene-huh 1.4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .scene-bob, .scene-scratch, .scene-huh { animation: none; }
+}

@@ -2,13 +2,11 @@ import {
   ArrowRight,
   BookOpen,
   Building2,
-  CalendarClock,
   Check,
   Compass,
   Globe,
   Hammer,
   Home,
-  LifeBuoy,
   PhoneCall,
   ShoppingBag,
   Store,
@@ -17,6 +15,8 @@ import {
   Wrench,
 } from "lucide-react";
 import SiteHeader from "./_components/SiteHeader";
+import HeroSlides from "./_components/HeroSlides";
+import MissedCallClock from "./_components/MissedCallClock";
 import SiteFooter from "./_components/SiteFooter";
 import LeadForm from "./_components/LeadForm";
 import { AreasWeServe } from "./_components/ServiceLanding";
@@ -93,6 +93,9 @@ const POS_SYSTEMS = [
   { name: "Square", desc: "Point of sale, payments and appointments for shops, cafes, salons and mobile businesses." },
 ];
 
+// The Riley demo line (same agent as the browser demo on /ai-receptionist).
+const RILEY_PHONE = { display: "(561) 220-9234", tel: "+15612209234" };
+
 const btnPrimary =
   "inline-flex items-center justify-center gap-2 rounded-lg bg-purple-700 px-6 py-3 text-sm font-semibold text-white hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600";
 const btnSecondary =
@@ -142,31 +145,32 @@ export default function Page() {
       <SiteHeader />
 
       <main id="main">
-        {/* Hero */}
-        <section className="border-b border-slate-100 bg-gradient-to-b from-purple-50/70 to-white">
-          <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1.1fr_0.9fr]">
-            <div>
-              <p className="text-sm font-semibold text-purple-700">Smarter Technology. Simpler Business.</p>
-              <h1 className="mt-4 text-balance text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-                Bringing affordable AI automation to South Florida businesses
-              </h1>
-              <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-slate-600">
-                AI receptionists, websites and automation that save small businesses time and money. We set it all up for you and explain it in plain English.
-              </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href="#lead" className={btnPrimary}>
-                  Let's Talk <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </a>
-                <a href={`tel:${CONTACT.phone}`} className={btnSecondary}>
-                  <PhoneCall className="h-4 w-4" aria-hidden="true" /> Call {CONTACT.phoneDisplay}
-                </a>
-              </div>
-              <p className="mt-4 text-sm text-slate-500">{LOCATION.summary}</p>
+        {/* Hero: messages fly in, then line up along the bottom (HeroSlides). */}
+        <section className="relative overflow-hidden bg-slate-950 text-white">
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(60rem_30rem_at_50%_-10%,rgba(126,34,206,0.45),transparent)]" />
+          <div className="relative mx-auto max-w-6xl px-4 pb-14 pt-10 sm:px-6 sm:pb-16 sm:pt-14">
+            <h1 className="text-balance text-center text-sm font-semibold uppercase tracking-[0.18em] text-purple-200 sm:text-base">
+              Bringing affordable AI automation to South Florida businesses
+            </h1>
+            <div className="mt-6 sm:mt-8">
+              <HeroSlides>
+                <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+                  <a href={`tel:${RILEY_PHONE.tel}`} className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-amber-300 px-7 py-3.5 text-base font-bold text-slate-950 shadow-lg shadow-amber-500/20 hover:bg-amber-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-200 sm:w-auto">
+                    <PhoneCall className="h-5 w-5" aria-hidden="true" /> Call our AI receptionist now
+                  </a>
+                  <a href="#lead" className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border border-white/25 px-7 py-3.5 text-base font-semibold text-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto">
+                    Let's Talk <ArrowRight className="h-5 w-5" aria-hidden="true" />
+                  </a>
+                </div>
+                <p className="mt-3 text-center text-sm text-slate-400">
+                  Riley picks up at {RILEY_PHONE.display}, any time. {LOCATION.summary}
+                </p>
+              </HeroSlides>
             </div>
-
-            <HeroIllustration />
           </div>
         </section>
+
+        <MissedCallClock />
 
         {/* Recent work */}
         <section id="work" className="scroll-mt-20 pt-16">
@@ -575,40 +579,3 @@ function SectionHeading({ kicker, title, intro }) {
 }
 
 // A simple picture of what the services do day to day. Illustrative only: no figures or claims.
-function HeroIllustration() {
-  const rows = [
-    { icon: Globe, title: "New website inquiry", note: "Sent to your inbox and CRM" },
-    { icon: PhoneCall, title: "After-hours call answered", note: "Caller details captured" },
-    { icon: CalendarClock, title: "Appointment reminder", note: "Sent to the customer automatically" },
-    { icon: LifeBuoy, title: "Follow-up scheduled", note: "No lead left waiting" },
-  ];
-  return (
-    <div aria-hidden="true" className="relative mx-auto w-full max-w-md">
-      <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-xl shadow-purple-900/5">
-        <div className="flex items-center justify-between border-b border-slate-100 pb-4">
-          <div className="flex items-center gap-2 text-sm font-semibold text-slate-800">
-            <Home className="h-4 w-4 text-purple-700" /> Your business, today
-          </div>
-          <span className="rounded-full bg-purple-50 px-2.5 py-1 text-xs font-medium text-purple-700">Example</span>
-        </div>
-        <ul className="mt-4 space-y-3">
-          {rows.map((r) => {
-            const Icon = r.icon;
-            return (
-              <li key={r.title} className="flex items-center gap-3 rounded-xl border border-slate-100 bg-slate-50 px-4 py-3">
-                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-white text-purple-700 ring-1 ring-slate-200">
-                  <Icon className="h-4 w-4" />
-                </span>
-                <div className="min-w-0">
-                  <div className="text-sm font-semibold text-slate-800">{r.title}</div>
-                  <div className="text-xs text-slate-500">{r.note}</div>
-                </div>
-                <Check className="ml-auto h-4 w-4 shrink-0 text-emerald-600" />
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    </div>
-  );
-}
