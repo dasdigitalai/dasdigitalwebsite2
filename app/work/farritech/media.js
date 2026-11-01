@@ -16,6 +16,12 @@ export const VIDEO = {
   playlistId: "PL8TxJEnhh3p2JLOoCTJA4csE61z-9vvPw",
 };
 
+// Short vertical videos (Facebook reels) shown under the main video. Each must be public on
+// Facebook for the embed to play. { url, title }
+export const REELS = [
+  { url: "https://www.facebook.com/reel/1254735413525347", title: "FarriTech on Facebook" },
+];
+
 // Headline numbers shown under the hero, e.g. { value: "120+", label: "farriers using FarriTech" }.
 export const RESULTS = [];
 

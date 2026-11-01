@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import SiteHeader from "../../_components/SiteHeader";
 import SiteFooter from "../../_components/SiteFooter";
 import Image from "next/image";
-import { Gallery, ResultsStrip, Testimonials, VideoSection } from "./CaseMedia";
-import { BANNER, PHOTOS, RESULTS, SCREENSHOTS, TESTIMONIALS, VIDEO } from "./media";
+import { Gallery, Reels, ResultsStrip, Testimonials, VideoSection } from "./CaseMedia";
+import { BANNER, PHOTOS, REELS, RESULTS, SCREENSHOTS, TESTIMONIALS, VIDEO } from "./media";
 import {
   ArrowRight,
   ArrowLeft,
@@ -287,6 +287,12 @@ export default function FarriTechCaseStudy() {
           <div className="mt-10">
             <VideoSection video={VIDEO} />
           </div>
+          {REELS.length ? (
+            <div className="mt-12">
+              <h3 className="mb-6 text-center text-lg font-semibold text-white">Quick clips</h3>
+              <Reels items={REELS} />
+            </div>
+          ) : null}
         </section>
 
         {TESTIMONIALS.length ? (

@@ -79,6 +79,54 @@ export function VideoSection({ video }) {
   );
 }
 
+// Vertical Facebook reels, loaded only when the visitor presses play.
+function Reel({ reel }) {
+  const [playing, setPlaying] = useState(false);
+  const src = `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(reel.url)}&show_text=false&autoplay=true&width=360`;
+  return (
+    <figure className="w-full max-w-[300px]">
+      <div className={`relative aspect-[9/16] overflow-hidden rounded-3xl border-2 border-purple-500 bg-black ${glowCard}`}>
+        {playing ? (
+          <iframe
+            src={src}
+            title={reel.title}
+            className="absolute inset-0 h-full w-full"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        ) : (
+          <button
+            type="button"
+            onClick={() => setPlaying(true)}
+            className="group absolute inset-0 flex h-full w-full flex-col items-center justify-center gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-fuchsia-300"
+            aria-label={`Play video: ${reel.title}`}
+          >
+            <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(20rem_20rem_at_50%_45%,rgba(168,85,247,0.35),transparent)]" />
+            <span className="relative grid h-16 w-16 place-items-center rounded-full bg-gradient-to-r from-purple-600 to-fuchsia-600 shadow-xl shadow-fuchsia-500/30 transition-transform group-hover:scale-105">
+              <Play className="ml-1 h-7 w-7 fill-white text-white" aria-hidden="true" />
+            </span>
+            <span className="relative px-4 text-center text-sm font-semibold text-white">{reel.title}</span>
+          </button>
+        )}
+      </div>
+      <figcaption className="mt-3 text-center text-sm">
+        <a href={reel.url} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-1.5 font-semibold text-purple-300 hover:text-white">
+          Watch on Facebook <ExternalLink className="h-4 w-4" aria-hidden="true" />
+        </a>
+      </figcaption>
+    </figure>
+  );
+}
+
+export function Reels({ items }) {
+  if (!items.length) return null;
+  return (
+    <div className="flex flex-wrap justify-center gap-6">
+      {items.map((r) => <Reel key={r.url} reel={r} />)}
+    </div>
+  );
+}
+
 // Image grid that opens a full-size viewer. Used for screenshots and photos.
 export function Gallery({ items, label }) {
   const [open, setOpen] = useState(null); // index or null
