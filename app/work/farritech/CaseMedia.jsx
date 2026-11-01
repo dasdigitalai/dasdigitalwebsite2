@@ -124,7 +124,8 @@ export function Gallery({ items, label }) {
                   height={it.height}
                   alt={it.alt}
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="aspect-[4/3] h-auto w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.03]"
+                  style={{ objectPosition: it.position || "top" }}
+                  className="aspect-[4/3] h-auto w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                 />
               </button>
               {it.caption ? <figcaption className="mt-3 text-sm text-white/70">{it.caption}</figcaption> : null}
