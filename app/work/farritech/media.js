@@ -105,7 +105,7 @@ export const PHOTOS = [
     height: 1600,
     alt: "A horse's two front hooves, freshly trimmed and shod, standing square on a rubber barn mat",
     caption: "Freshly shod fronts, standing square",
-    position: "bottom",
+    position: "center",
   },
 ];
 
