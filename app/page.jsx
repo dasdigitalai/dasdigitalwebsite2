@@ -155,7 +155,7 @@ export default function Page() {
             <div className="mt-6 sm:mt-8">
               <HeroSlides>
                 <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-                  <a href={`tel:${RILEY_PHONE.tel}`} className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-amber-300 px-7 py-3.5 text-base font-bold text-slate-950 shadow-lg shadow-amber-500/20 hover:bg-amber-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-200 sm:w-auto">
+                  <a href={`tel:${RILEY_PHONE.tel}`} className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-fuchsia-600 px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-fuchsia-500/25 hover:from-purple-500 hover:to-fuchsia-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-300 sm:w-auto">
                     <PhoneCall className="h-5 w-5" aria-hidden="true" /> Call our AI receptionist now
                   </a>
                   <a href="#lead" className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border border-white/25 px-7 py-3.5 text-base font-semibold text-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto">

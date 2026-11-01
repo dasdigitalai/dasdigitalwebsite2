@@ -26,13 +26,13 @@ function Store({ label, open }) {
     <div className="flex flex-col items-center">
       <svg viewBox="0 0 80 64" className="h-16 w-20 sm:h-20 sm:w-24" fill="none">
         <rect x="6" y="18" width="68" height="44" rx="2" className={open ? "fill-purple-600" : "fill-slate-700"} />
-        <path d="M2 18 L10 4 H70 L78 18 Z" className={open ? "fill-amber-300" : "fill-slate-500"} />
+        <path d="M2 18 L10 4 H70 L78 18 Z" className={open ? "fill-fuchsia-400" : "fill-slate-500"} />
         <path d="M18 4 L14 18 M34 4 L32 18 M46 4 L48 18 M62 4 L66 18" stroke="rgba(15,23,42,0.35)" strokeWidth="3" />
-        <rect x="31" y="34" width="18" height="28" rx="1.5" className={open ? "fill-amber-200" : "fill-slate-900"} />
+        <rect x="31" y="34" width="18" height="28" rx="1.5" className={open ? "fill-fuchsia-200" : "fill-slate-900"} />
         <rect x="12" y="28" width="14" height="12" rx="1" className={open ? "fill-purple-300" : "fill-slate-800"} />
         <rect x="54" y="28" width="14" height="12" rx="1" className={open ? "fill-purple-300" : "fill-slate-800"} />
       </svg>
-      <span className={`mt-1 text-xs font-semibold sm:text-sm ${open ? "text-amber-300" : "text-slate-400"}`}>{label}</span>
+      <span className={`mt-1 text-xs font-semibold sm:text-sm ${open ? "text-fuchsia-300" : "text-slate-400"}`}>{label}</span>
     </div>
   );
 }
@@ -61,7 +61,7 @@ function BeforeScene() {
         <Store label="Your business" />
       </div>
       <div className="absolute bottom-0 right-0">
-        <span className="scene-plus absolute -top-6 left-1/2 -translate-x-1/2 text-sm font-bold text-amber-300">+1</span>
+        <span className="scene-plus absolute -top-6 left-1/2 -translate-x-1/2 text-sm font-bold text-fuchsia-300">+1</span>
         <Store label="Competitor" open />
       </div>
       <div className="scene-runner absolute bottom-7">
@@ -139,7 +139,7 @@ function RunToCompetitor() {
             type="button"
             onClick={() => pick(key)}
             aria-pressed={phase === key}
-            className={`min-h-11 rounded-full px-4 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-300 ${phase === key ? (key === "after" ? "bg-emerald-400 text-slate-950" : "bg-white text-slate-950") : "bg-white/10 text-slate-300 hover:bg-white/20"}`}
+            className={`min-h-11 rounded-full px-4 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-fuchsia-300 ${phase === key ? (key === "after" ? "bg-emerald-400 text-slate-950" : "bg-white text-slate-950") : "bg-white/10 text-slate-300 hover:bg-white/20"}`}
           >
             {label}
           </button>
@@ -176,15 +176,15 @@ export default function MissedCallClock() {
         <h2 id="clock-heading" className="text-balance text-lg font-semibold text-slate-200 sm:text-xl">
           A small business that misses 1 in 3 calls has lost about
         </h2>
-        <p className="mt-3 text-5xl font-extrabold tracking-tight text-amber-300 tabular-nums sm:text-7xl" aria-live="off">
-          {amount === null ? <span className="text-amber-300/40">$——,———.——</span> : money(amount)}
+        <p className="mt-3 text-5xl font-extrabold tracking-tight text-fuchsia-300 tabular-nums sm:text-7xl" aria-live="off">
+          {amount === null ? <span className="text-fuchsia-300/40">$——,———.——</span> : money(amount)}
         </p>
         <p className="mt-3 text-lg text-slate-200 sm:text-xl">
           in sales so far this year. That's <span className="font-semibold text-white">{money(PER_MONTH).replace(".00", "")}</span> a month walking to the competition.
         </p>
         <a
           href="/ai-statistics#roi"
-          className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-amber-300 px-7 py-3.5 text-base font-bold text-slate-950 hover:bg-amber-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-200"
+          className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-fuchsia-600 px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-fuchsia-500/25 hover:from-purple-500 hover:to-fuchsia-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-300"
         >
           What's it costing me? <ArrowRight className="h-5 w-5" aria-hidden="true" />
         </a>
