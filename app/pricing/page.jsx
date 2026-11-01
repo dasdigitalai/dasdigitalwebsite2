@@ -275,7 +275,7 @@ export default function Page() {
                 <div className="max-w-2xl">
                   <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{plan.name}</h2>
                   {plan.onSale && saleActive ? (
-                    <p className="mt-3 inline-flex rounded-full bg-amber-100 px-3 py-1 text-sm font-semibold text-amber-900">{SALE.label}</p>
+                    <p className="mt-3 inline-flex rounded-full bg-fuchsia-100 px-3 py-1 text-sm font-semibold text-fuchsia-800">{SALE.label}</p>
                   ) : null}
                   <p className="mt-3 text-lg text-slate-600">{plan.blurb}</p>
                 </div>

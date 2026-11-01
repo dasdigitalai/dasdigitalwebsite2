@@ -53,7 +53,7 @@ function Headline({ line, accent }) {
   return (
     <p className="text-balance text-center text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-7xl">
       {line.map((part, j) => (
-        <span key={j} className={`block ${j === accent ? "text-amber-300" : ""}`}>{part}</span>
+        <span key={j} className={`block ${j === accent ? "text-fuchsia-300" : ""}`}>{part}</span>
       ))}
     </p>
   );
@@ -116,7 +116,7 @@ export default function HeroSlides({ children }) {
               className={`rounded-2xl border p-4 transition-colors duration-500 sm:p-5 ${shown ? "border-white/10 bg-white/5" : "border-dashed border-white/15 bg-transparent"}`}
             >
               <div className={`transition-all duration-500 ease-out ${shown ? "translate-y-0 scale-100 opacity-100" : "translate-y-6 scale-95 opacity-0"}`}>
-              <p className="text-3xl font-extrabold tracking-tight text-amber-300 sm:text-4xl">{s.stat}</p>
+              <p className="text-3xl font-extrabold tracking-tight text-fuchsia-300 sm:text-4xl">{s.stat}</p>
               <p className="mt-1 text-sm leading-snug text-slate-200">{s.label}</p>
               <a
                 href={s.source.href}
@@ -134,13 +134,13 @@ export default function HeroSlides({ children }) {
       </ul>
 
       <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
-        <a href="/ai-statistics" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-amber-300 hover:text-amber-200">
+        <a href="/ai-statistics" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-fuchsia-300 hover:text-fuchsia-200">
           See all the numbers and run your own <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </a>
         <button
           type="button"
           onClick={replay}
-          className={`inline-flex min-h-11 items-center gap-1.5 rounded-full px-3 text-sm text-slate-300 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-300 ${settled ? "" : "invisible"}`}
+          className={`inline-flex min-h-11 items-center gap-1.5 rounded-full px-3 text-sm text-slate-300 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-fuchsia-300 ${settled ? "" : "invisible"}`}
         >
           <RotateCcw className="h-4 w-4" aria-hidden="true" /> Replay
         </button>
