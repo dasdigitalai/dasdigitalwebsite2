@@ -30,7 +30,7 @@ export function ResultsStrip({ results }) {
 export function VideoSection({ video }) {
   const [playing, setPlaying] = useState(false);
   const src = video.featuredId
-    ? `https://www.youtube-nocookie.com/embed/${video.featuredId}?autoplay=1&rel=0&list=${video.playlistId}`
+    ? `https://www.youtube-nocookie.com/embed/${video.featuredId}?autoplay=1&rel=0&list=${video.featuredPlaylistId || video.playlistId}`
     : `https://www.youtube-nocookie.com/embed/videoseries?list=${video.playlistId}&autoplay=1&rel=0`;
   const title = video.featuredId ? video.featuredTitle : "FarriTech training playlist";
 
