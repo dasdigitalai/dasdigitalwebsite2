@@ -57,6 +57,7 @@ const PLANS = [
           "Everything in Starter",
           "Books appointments and reservations on your calendar",
           "Takes orders and texts them to you or your kitchen",
+          "AI email responder: answers website and email inquiries in minutes, in your voice",
           "Monthly report: calls answered and what they were worth",
           "Up to 800 call minutes a month",
         ],
