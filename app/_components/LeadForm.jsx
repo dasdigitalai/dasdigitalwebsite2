@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { CONTACT } from "./site";
 import TipsOptIn from "./TipsOptIn";
 
-const SERVICE_OPTIONS = ["Website Design", "Online Store", "AI Receptionists", "Business Automation", "Technology Consulting", "Free website review", "Not sure yet"];
+const SERVICE_OPTIONS = ["Website Design", "Online Store", "AI Receptionists", "Local Visibility", "Sales Dashboard", "Business Automation", "Technology Consulting", "Free website review", "Not sure yet"];
 
 const field =
   "w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-slate-900 placeholder:text-slate-400 focus:border-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-600/30";
