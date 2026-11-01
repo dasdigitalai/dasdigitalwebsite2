@@ -57,7 +57,7 @@ export default function Page() {
         { q: "Can I still answer calls myself?", a: "Yes. You choose when it picks up: after a few rings, after hours, or all the time." },
         { q: "Do I need a new phone number?", a: "Usually not. We can forward your existing number to the AI receptionist when you don't answer." },
         { q: "Can it answer calls in Spanish?", a: "Yes. We can set it up to greet callers and take their details in Spanish as well as English." },
-        { q: "What does it cost?", a: "It depends on your call volume and what you want it to do. After a short conversation we give you a clear price before any work starts." },
+        { q: "What does it cost?", a: "Plans start at $199 a month for up to 300 call minutes, plus a one-time $499 setup. The Pro plan, which adds booking and orders, is $349 a month. It's month-to-month, and the full details are on our pricing page." },
       ]}
     />
   );

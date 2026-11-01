@@ -10,6 +10,7 @@ import { CONTACT } from "./site";
 const ITEMS = [
   { text: "New: Online stores from $995", href: "/online-store" },
   { text: "Talk to Riley, our AI receptionist: (561) 220-9234", href: "/ai-receptionist#try-riley" },
+  { text: "AI receptionists from $199/month", href: "/pricing" },
   { text: "Free website review", href: "/#review" },
   { text: "Websites that bring in customers", href: "/website-design" },
   { text: "AI receptionists that answer every call, 24/7", href: "/ai-receptionist" },
