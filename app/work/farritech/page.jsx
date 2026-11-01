@@ -3,9 +3,8 @@
 import React, { useState } from "react";
 import SiteHeader from "../../_components/SiteHeader";
 import SiteFooter from "../../_components/SiteFooter";
-import Image from "next/image";
 import { Gallery, Reels, ResultsStrip, Testimonials, VideoSection } from "./CaseMedia";
-import { BANNER, PHOTOS, REELS, RESULTS, SCREENSHOTS, TESTIMONIALS, VIDEO } from "./media";
+import { PHOTOS, REELS, RESULTS, SCREENSHOTS, TESTIMONIALS, VIDEO } from "./media";
 import {
   ArrowRight,
   ArrowLeft,
@@ -222,13 +221,6 @@ export default function FarriTechCaseStudy() {
             </div>
           </div>
         </section>
-
-        {/* Banner photo */}
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="overflow-hidden rounded-3xl border-2 border-purple-500 shadow-[0_0_0_1px_rgba(168,85,247,0.25),0_20px_40px_-25px_rgba(168,85,247,0.45)]">
-            <Image src={BANNER.src} width={BANNER.width} height={BANNER.height} alt={BANNER.alt} priority sizes="(min-width: 1152px) 1152px, 100vw" className="aspect-[21/9] h-auto w-full object-cover object-center" />
-          </div>
-        </div>
 
         <ResultsStrip results={RESULTS} />
 
