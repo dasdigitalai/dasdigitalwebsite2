@@ -56,14 +56,6 @@ export const SCREENSHOTS = [
   },
 ];
 
-// Wide photo shown under the hero.
-export const BANNER = {
-  src: "/work/farritech/field-truck-setup.jpg",
-  width: 1600,
-  height: 1200,
-  alt: "Two farriers at a barn beside a pickup truck fitted with a farrier's tool body, doors open",
-};
-
 // Real-world photos (farriers in the barn, the app on a phone at work).
 // `position` is where to anchor the crop in the grid ("center", "top", ...).
 export const PHOTOS = [
