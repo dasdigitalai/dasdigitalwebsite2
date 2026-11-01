@@ -438,7 +438,7 @@ export default function FieldServicePlatformCaseStudy() {
                 Let's Talk <ArrowRight className="h-4 w-4" />
               </a>
               <a
-                href="/"
+                href="/work"
                 className={`inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold ${outlineBtn}`}
               >
                 See All Work <ArrowRight className="h-4 w-4" />
