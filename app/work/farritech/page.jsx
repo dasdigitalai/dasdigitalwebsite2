@@ -182,10 +182,18 @@ export default function FarriTechCaseStudy() {
 
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
-                  href="https://www.farritech.com"
+                  href="https://www.farritech.com/signup"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold ${purpleBtn}`}
+                >
+                  Sign Up for FarriTech <ExternalLink className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://www.farritech.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold ${outlineBtn}`}
                 >
                   Visit FarriTech.com <ExternalLink className="h-4 w-4" />
                 </a>
@@ -299,6 +307,17 @@ export default function FarriTechCaseStudy() {
               <Reels items={REELS} />
             </div>
           ) : null}
+          <div className="mt-12 text-center">
+            <p className="text-white/70">Are you a farrier? Try it on your own business.</p>
+            <a
+              href="https://www.farritech.com/signup"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`mt-4 inline-flex min-h-11 items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold ${purpleBtn}`}
+            >
+              Sign Up for FarriTech <ExternalLink className="h-4 w-4" aria-hidden="true" />
+            </a>
+          </div>
         </section>
 
         {TESTIMONIALS.length ? (
