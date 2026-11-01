@@ -222,15 +222,15 @@ export default function FarriTechCaseStudy() {
           </div>
         </section>
 
-        {/* Rig illustration (original artwork: public/work/farritech/farrier-rig.svg) */}
+        {/* Rig illustration (original artwork: public/work/farritech/farrier-rig-stables.jpg) */}
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="overflow-hidden rounded-3xl border-2 border-purple-500 shadow-[0_0_0_1px_rgba(168,85,247,0.25),0_20px_40px_-25px_rgba(168,85,247,0.45)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/work/farritech/farrier-rig.svg"
+              src="/work/farritech/farrier-rig-stables.jpg"
               width={1600}
-              height={640}
-              alt="Illustration of a professional farrier rig: a silver pickup with a diamond-plate aluminum farrier body, the FarriTech logo on the side panel, a Scan to book an appointment QR decal and a swing-out anvil"
+              height={1000}
+              alt="Illustration of a white farrier truck with the FarriTech logo on its side compartment and a swing-out anvil, parked in front of a horse stable with palm trees"
               className="block h-auto w-full"
             />
           </div>
