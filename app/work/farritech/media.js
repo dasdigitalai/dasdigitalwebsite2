@@ -99,6 +99,14 @@ export const PHOTOS = [
     caption: "FarriTech in the barn: it syncs when there's signal and keeps working offline",
     position: "top",
   },
+  {
+    src: "/work/farritech/field-finished-front-feet.jpg",
+    width: 1200,
+    height: 1600,
+    alt: "A horse's two front hooves, freshly trimmed and shod, standing square on a rubber barn mat",
+    caption: "Freshly shod fronts, standing square",
+    position: "bottom",
+  },
 ];
 
 // { quote, name, role, location, photo: { src, width, height } | null }
