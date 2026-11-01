@@ -8,10 +8,16 @@
 export const VIDEO = {
   // The main demo video's YouTube ID (the part after "v=" in the link). When set, it plays
   // first; until then the training playlist plays.
-  featuredId: "gNW-B_LfBnc",
-  featuredTitle: "FarriTech walkthrough",
-  // The playlist that keeps playing after the featured video (the one it was shared from).
-  featuredPlaylistId: "PL8TxJEnhh3p3yM_rh6N8famBAuZd1W0_u",
+  // The "How to Use FarriTech" tour from the FarriTech mobile app (farrier-pro repo, mobile.html
+  // TOUR_VIDEO_ID). Keep the chapters in sync with the app's tourChapters.
+  featuredId: "LSOIA3beYqg",
+  featuredTitle: "How to Use FarriTech",
+  chapters: [
+    { time: 0, label: "New Customer" },
+    { time: 59, label: "New Invoice" },
+    { time: 97, label: "Pay Invoice" },
+    { time: 147, label: "New Appointment" },
+  ],
   // The full training playlist, linked under the player and played when there's no featured video.
   playlistId: "PL8TxJEnhh3p2JLOoCTJA4csE61z-9vvPw",
 };

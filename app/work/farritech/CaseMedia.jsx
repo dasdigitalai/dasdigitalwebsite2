@@ -29,9 +29,16 @@ export function ResultsStrip({ results }) {
 // using YouTube's privacy-enhanced domain.
 export function VideoSection({ video }) {
   const [playing, setPlaying] = useState(false);
+  const [start, setStart] = useState(0);
   const src = video.featuredId
-    ? `https://www.youtube-nocookie.com/embed/${video.featuredId}?autoplay=1&rel=0&list=${video.featuredPlaylistId || video.playlistId}`
+    ? `https://www.youtube-nocookie.com/embed/${video.featuredId}?autoplay=1&rel=0&start=${start}&list=${video.featuredPlaylistId || video.playlistId}`
     : `https://www.youtube-nocookie.com/embed/videoseries?list=${video.playlistId}&autoplay=1&rel=0`;
+  const chapters = video.featuredId ? video.chapters || [] : [];
+  const playFrom = (t) => {
+    setStart(t);
+    setPlaying(true);
+  };
+  const fmt = (t) => `${Math.floor(t / 60)}:${String(t % 60).padStart(2, "0")}`;
   const title = video.featuredId ? video.featuredTitle : "FarriTech training playlist";
 
   return (
@@ -39,6 +46,7 @@ export function VideoSection({ video }) {
       <div className={`relative aspect-video overflow-hidden rounded-3xl border-2 border-purple-500 bg-black ${glowCard}`}>
         {playing ? (
           <iframe
+            key={start}
             src={src}
             title={title}
             className="absolute inset-0 h-full w-full"
@@ -48,7 +56,7 @@ export function VideoSection({ video }) {
         ) : (
           <button
             type="button"
-            onClick={() => setPlaying(true)}
+            onClick={() => playFrom(0)}
             className="group absolute inset-0 flex h-full w-full flex-col items-center justify-center gap-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-fuchsia-300"
             aria-label={`Play video: ${title}`}
           >
@@ -65,6 +73,22 @@ export function VideoSection({ video }) {
           </button>
         )}
       </div>
+      {chapters.length ? (
+        <div className="mt-5 flex flex-wrap justify-center gap-2" role="group" aria-label="Jump to a chapter">
+          {chapters.map((c) => (
+            <button
+              key={c.time}
+              type="button"
+              onClick={() => playFrom(c.time)}
+              aria-pressed={playing && start === c.time}
+              className={`inline-flex min-h-11 items-center gap-2 rounded-full border px-4 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-fuchsia-300 ${playing && start === c.time ? "border-fuchsia-400 bg-fuchsia-500/20 text-white" : "border-white/15 bg-white/5 text-white/80 hover:bg-white/10"}`}
+            >
+              <span className="rounded-md bg-white/10 px-1.5 py-0.5 text-xs tabular-nums text-fuchsia-200">{fmt(c.time)}</span>
+              {c.label}
+            </button>
+          ))}
+        </div>
+      ) : null}
       <p className="mt-4 text-center text-sm">
         <a
           href={`https://www.youtube.com/playlist?list=${video.playlistId}`}
