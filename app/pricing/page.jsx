@@ -6,7 +6,7 @@ import { CONTACT, LOCATION, PROVIDER, SITE_URL, breadcrumbs } from "../_componen
 
 const path = "/pricing";
 const description =
-  "Simple month-to-month pricing for AI receptionists, local visibility and sales dashboards for South Florida small businesses. AI receptionists from $199 a month.";
+  "Simple month-to-month pricing for AI receptionists and local visibility for South Florida small businesses. AI receptionists from $199 a month.";
 
 export const metadata = {
   title: "Pricing: AI Receptionists, Local Visibility and Dashboards",
@@ -148,35 +148,6 @@ const PLANS = [
     ],
     note: "Delivered in about 7 business days. Start Local Visibility within 30 days and there's no Local Visibility setup fee. We never guarantee rankings; we guarantee the work.",
   },
-  {
-    id: "owner-insights",
-    name: "Owner Insights",
-    blurb: "See what's selling and when, and stop retyping paperwork.",
-    tiers: [
-      {
-        name: "Sales Dashboard",
-        price: "$149",
-        unit: "/month",
-        extra: "+ $750 one-time build",
-        features: [
-          "A dashboard built from your point-of-sale data",
-          "Sales by day, hour, item and staff member",
-          "A weekly email that says what changed, in plain English",
-        ],
-      },
-      {
-        name: "Paperwork Automation",
-        price: "From $1,500",
-        unit: "",
-        extra: "One-time, quoted after a free review",
-        features: [
-          "AI reads invoices, applications and forms for you",
-          "The details go straight into your spreadsheet or CRM",
-          "Built around the forms you already use",
-        ],
-      },
-    ],
-  },
 ];
 
 const BUNDLE = {
@@ -192,7 +163,6 @@ const FAQS = [
   { q: "Do I need a new phone number?", a: "No. Your phone rings as usual, and calls you don't pick up forward to your AI receptionist." },
   { q: "What if I go over my call minutes?", a: "Nothing stops working. Extra minutes are $0.35 each, and we'll tell you if a bigger plan would cost less." },
   { q: "Will review replies go out without me seeing them?", a: "Only if you want them to. By default you approve every reply. Many owners let 4- and 5-star replies go out on their own." },
-  { q: "Which point-of-sale systems work with the Sales Dashboard?", a: "Most point-of-sale systems can export a daily sales report, and we build from that. Tell us which one you use and we'll confirm before you pay anything." },
   { q: "Do you guarantee a spot on Google?", a: "No one honestly can. Google decides rankings. We guarantee the work: a complete, accurate profile, consistent listings and pages written for the searches your customers make, with a report showing everything we did." },
   { q: "What about websites and online stores?", a: "Online stores are a one-time $995 with our Online Store Starter Package. Websites and automation projects get a clear price after a short conversation, before any work starts." },
 ];
