@@ -33,7 +33,7 @@ const PLANS = [
     name: "AI Receptionist",
     href: "/ai-receptionist",
     blurb: "Answers every call you can't get to, day or night, and texts you the details.",
-    setup: "$499",
+    setupNote: "Plus one-time setup fee",
     tiers: [
       {
         name: "Starter",
@@ -285,6 +285,8 @@ export default function Page() {
                   <p className="shrink-0 text-sm font-medium text-slate-600">
                     One-time setup: <span className="font-semibold text-slate-900">{plan.setup}</span>
                   </p>
+                ) : plan.setupNote ? (
+                  <p className="shrink-0 text-sm font-medium text-slate-600">{plan.setupNote}</p>
                 ) : null}
               </div>
 
