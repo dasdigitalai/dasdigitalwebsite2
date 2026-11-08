@@ -63,6 +63,15 @@ const WEBSITES = [
     alt: "Premium pet product online store with dog and cat hero photography, shopping categories and best-selling products",
   },
   {
+    title: "Meridian Polo Club",
+    kind: "Website · Sample design",
+    desc: "Prestigious private polo club website concept: season fixtures, membership and events. Fictional club, for illustration purposes only.",
+    src: "/work/meridian-polo-club-sample.jpg",
+    width: 1024,
+    height: 1564,
+    alt: "Sample polo club website in deep green and gold: the headline “A century of polo, beautifully kept.” beside a shield crest with crossed mallets, followed by club facts and a heritage section",
+  },
+  {
     title: "Palm Beach Farrier Supply",
     desc: "A farrier supply store in Wellington, Florida.",
     src: "/work/palm-beach-farrier-supply.jpg",
