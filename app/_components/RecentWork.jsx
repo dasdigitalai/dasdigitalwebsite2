@@ -63,6 +63,15 @@ const WEBSITES = [
     alt: "Premium pet product online store with dog and cat hero photography, shopping categories and best-selling products",
   },
   {
+    title: "Beldi Equestrian & Polo Club",
+    kind: "Website \u00b7 Concept redesign",
+    desc: "A concept redesign for a Wellington and Loxahatchee Groves polo and equestrian club. Not the club\u2019s official site; for illustration purposes only.",
+    src: "/work/beldi-polo-club-concept.jpg",
+    width: 1024,
+    height: 1564,
+    alt: "Concept website for a polo and equestrian club: the headline \u201cPolo and horsemanship at golden hour\u201d over a sunset polo field with goal posts, followed by club facts and Equestrian and Polo cards",
+  },
+  {
     title: "Palm Beach Farrier Supply",
     desc: "A farrier supply store in Wellington, Florida.",
     src: "/work/palm-beach-farrier-supply.jpg",
