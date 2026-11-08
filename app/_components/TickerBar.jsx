@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import { Pause, Play } from "lucide-react";
 import { CONTACT } from "./site";
 
@@ -23,8 +22,6 @@ const SHOW_FOR_MS = 60_000;
 const STARTED_KEY = "ticker-started";
 
 export default function TickerBar() {
-  // Full-page sample designs (/samples/…) show without the DAS Digital bar.
-  const hiddenHere = (usePathname() || "").startsWith("/samples/");
   const [paused, setPaused] = useState(false);
   // null until we know how long it has been showing this visit, so it never flashes for returning pages.
   const [visible, setVisible] = useState(null);
@@ -55,13 +52,13 @@ export default function TickerBar() {
 
   // Keep the footer clear of the bar only while it's showing.
   useEffect(() => {
-    document.body.style.paddingBottom = visible && !hiddenHere ? "2.5rem" : "";
+    document.body.style.paddingBottom = visible ? "2.5rem" : "";
     return () => {
       document.body.style.paddingBottom = "";
     };
-  }, [visible, hiddenHere]);
+  }, [visible]);
 
-  if (!visible || hiddenHere) return null;
+  if (!visible) return null;
 
   return (
     <div
