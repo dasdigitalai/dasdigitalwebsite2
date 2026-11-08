@@ -21,6 +21,11 @@
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
+.beldi { position: relative; }
+/* "SAMPLE" watermark tiled over the whole page, above everything and never in the way of clicks. */
+.beldi::after { content: ""; position: absolute; inset: 0; z-index: 60; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='440' height='320' viewBox='0 0 440 320'%3E%3Cg transform='rotate(-28 220 160)' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-weight='700'%3E%3Ctext x='220' y='160' font-size='54' letter-spacing='12' fill='%23d9a441' fill-opacity='0.26' stroke='%23ffffff' stroke-opacity='0.18' stroke-width='1'%3ESAMPLE%3C/text%3E%3Ctext x='220' y='190' font-size='14' letter-spacing='6' fill='%23d9a441' fill-opacity='0.30'%3EDAS DIGITAL CONCEPT%3C/text%3E%3C/g%3E%3C/svg%3E"); background-size: 440px 320px; }
+@media (max-width: 720px) { .beldi::after { background-size: 330px 240px; } }
+
 .beldi *, .beldi *::before, .beldi *::after { box-sizing: border-box; }
 .beldi h1, .beldi h2, .beldi h3, .beldi h4 { font-family: var(--serif); font-weight: 500; line-height: 1.08; margin: 0; }
 .beldi p { margin: 0; }
