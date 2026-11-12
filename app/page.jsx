@@ -143,25 +143,26 @@ export default function Page() {
 
       <main id="main">
         {/* Hero */}
-        <section className="border-b border-slate-100 bg-gradient-to-b from-purple-50/70 to-white">
-          <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1.1fr_0.9fr]">
+        <section className="relative overflow-hidden bg-slate-950 text-white">
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(60rem_30rem_at_30%_-10%,rgba(126,34,206,0.45),transparent)]" />
+          <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <p className="text-sm font-semibold text-purple-700">Smarter Technology. Simpler Business.</p>
-              <h1 className="mt-4 text-balance text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+              <p className="text-sm font-semibold text-purple-300">Smarter Technology. Simpler Business.</p>
+              <h1 className="mt-4 text-balance text-4xl font-bold tracking-tight text-white sm:text-5xl">
                 Websites, AI receptionists and automation for South Florida businesses
               </h1>
-              <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-slate-600">
+              <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-slate-300">
                 Digital consulting services for small businesses. We set up the technology that helps your business run smoother, and explain it in plain English.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a href="#lead" className={btnPrimary}>
                   Let's Talk <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </a>
-                <a href={`tel:${CONTACT.phone}`} className={btnSecondary}>
+                <a href={`tel:${CONTACT.phone}`} className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/25 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
                   <PhoneCall className="h-4 w-4" aria-hidden="true" /> Call {CONTACT.phoneDisplay}
                 </a>
               </div>
-              <p className="mt-4 text-sm text-slate-500">{LOCATION.summary}</p>
+              <p className="mt-4 text-sm text-slate-400">{LOCATION.summary}</p>
             </div>
 
             <HeroIllustration />
@@ -584,26 +585,26 @@ function HeroIllustration() {
   ];
   return (
     <div aria-hidden="true" className="relative mx-auto w-full max-w-md">
-      <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-xl shadow-purple-900/5">
-        <div className="flex items-center justify-between border-b border-slate-100 pb-4">
-          <div className="flex items-center gap-2 text-sm font-semibold text-slate-800">
-            <Home className="h-4 w-4 text-purple-700" /> Your business, today
+      <div className="rounded-2xl border border-white/10 bg-slate-900/80 p-5 shadow-xl shadow-purple-950/40">
+        <div className="flex items-center justify-between border-b border-white/10 pb-4">
+          <div className="flex items-center gap-2 text-sm font-semibold text-slate-100">
+            <Home className="h-4 w-4 text-purple-300" /> Your business, today
           </div>
-          <span className="rounded-full bg-purple-50 px-2.5 py-1 text-xs font-medium text-purple-700">Example</span>
+          <span className="rounded-full bg-purple-500/15 px-2.5 py-1 text-xs font-medium text-purple-200">Example</span>
         </div>
         <ul className="mt-4 space-y-3">
           {rows.map((r) => {
             const Icon = r.icon;
             return (
-              <li key={r.title} className="flex items-center gap-3 rounded-xl border border-slate-100 bg-slate-50 px-4 py-3">
-                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-white text-purple-700 ring-1 ring-slate-200">
+              <li key={r.title} className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/5 px-4 py-3">
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-slate-950 text-purple-300 ring-1 ring-white/10">
                   <Icon className="h-4 w-4" />
                 </span>
                 <div className="min-w-0">
-                  <div className="text-sm font-semibold text-slate-800">{r.title}</div>
-                  <div className="text-xs text-slate-500">{r.note}</div>
+                  <div className="text-sm font-semibold text-slate-100">{r.title}</div>
+                  <div className="text-xs text-slate-400">{r.note}</div>
                 </div>
-                <Check className="ml-auto h-4 w-4 shrink-0 text-emerald-600" />
+                <Check className="ml-auto h-4 w-4 shrink-0 text-emerald-400" />
               </li>
             );
           })}
